@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        body {
+            background: #ddd;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    
+        li {
+            list-style: none;
+        }
+    
+        .banner-container {
+            width: 1120px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+    
+        .banner-wrapper {
+            width: 1120px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .banner-item {
+            width: 1120px;
+            height: 400px;
+            position: absolute;
+            text-align: center;
+            line-height: 400px;
+            font-size: 100px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+    
+        .banner-item img {
+            width: 1120px;
+            height: 400px;
+        }
+    
+        .banner-item.active {
+            z-index: 2;
+        }
+    
+
+        .button-prev,
+        .button-next {
+            height: 60px;
+            width: 60px;
+            background: plum;
+            position: absolute;
+            z-index: 999;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 30px;
+            opacity: .8;
+        }
+    
+        .button-prev {
+            left: 0;
+            top: 50%;
+            margin-top: -30px;
+        }
+    
+        .button-next {
+            right: 0;
+            top: 50%;
+            margin-top: -30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner-container">
+            <!--轮播图 主体-->
+            <div class="banner-wrapper">
+                <div class="banner-item active">
+                    <img src="images/4.jpg" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="images/2.jpg" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="images/3.jpg" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="images/1.jpg" alt="">
+                </div>
+            </div>
+            <!--轮播图 前后小翅膀-->
+            <div id="prev" class="button-prev"> < </div>
+            <div id="next" class="button-next"> > </div>
+        </div>
+
+        <script src="src/libs/jquery-3.3.1.js"></script>
+        <script src="src/js/jquery.banner.js"></script>
+        <script>
+            //轮播图插件;
+            $(function () {
+
+                $.Banner({
+                        animate: "slide",   //2种动效 slide | fade 
+                        nextBtn: $("#next"),
+                        prevBtn: $("#prev"),
+                        autoPlay: false,    //自动播放
+                })  
+
+            })
+        </script>
+
+
+
+    
+</body>
+
+</html>
